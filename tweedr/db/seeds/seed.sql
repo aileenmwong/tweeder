@@ -1,6 +1,9 @@
 \c tweedr_dev
 
-INSERT INTO tweeds (tweed_text, tweed_time) VALUES 
-  ('Hello World!', 1494788500041),
-  ('I love using Tweedr... so much better than twitter.', 1494788543350),
-  ('React is the best!', 1494788564011);
+INSERT INTO tweedr (tweed) VALUES
+  ('Hello World!'),
+  ('I love using Tweedr... so much better than twitter.'),
+  ('React is the best!'),
+  ('we like node as well'),
+  ('sometimes we do not like node'),
+  ('but we like React');
