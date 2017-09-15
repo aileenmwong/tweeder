@@ -9,14 +9,14 @@ class TweedForm extends Component {
       onSubmit={this.props.handleSubmit}
     >
     <input
-      id = 'submit'
+      id="submit"
       type="text"
       value={this.props.inputTweedValue}
       name="Tweed"
       placeholder="Add A Tweed"
       onChange={this.props.handleChange}
 
-    /><br/>
+    ></input><br/>
     <button id="submit">Add!</button>
 
     </form>

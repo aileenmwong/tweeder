@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import TweedForm from '/.components/TweedForm';
+import TweedForm from './components/TweedForm';
+import TweedList from './components/TweedForm';
 import './App.css';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      db: {}
+      db: {},
       inputTweedValue: '',
       };
 
