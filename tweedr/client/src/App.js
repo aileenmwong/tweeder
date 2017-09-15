@@ -1,18 +1,48 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import TweedForm from '/.components/TweedForm';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      db: {}
+      inputTweedValue: '',
+      };
+
+  }
+
+  componentWillMount() {
+    console.log('App will mount');
+  }
+
+  componentDidMount() {
+    console.log('App did mount');
+  }
+
+  handleChange(event) {
+    this.setState({
+      inputTweedValue: event.target.value
+    });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    event.target.content = '';
+  }
+
   render() {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <h1>Tweedr</h1>
+          <h2>What ya thinking?</h2>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <TweedForm
+          handleSubmit={this.handleSubmit}
+          handleChange={this.handleChange}
+          />
+        <TweedList />
       </div>
     );
   }
