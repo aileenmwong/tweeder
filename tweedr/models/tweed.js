@@ -1,18 +1,20 @@
 const db = require('../db/config');
+const pgp = require('pg-promise')();
+const db = pgp(config)
 
 const Tweed = {};
 
 Tweed.findAll = () => {
   return db.query(
-    `SELECT * FROM tweeds`
+    `SELECT * FROM tweedr`
   );
 };
 
 Tweed.findById = (id) => {
   return db.oneOrNone(
     `
-    SELECT * FROM tweeds
-    WHERE id = $1`, 
+    SELECT * FROM tweedr
+    WHERE id = $1`,
     [id]
   );
 };
@@ -20,10 +22,10 @@ Tweed.findById = (id) => {
 Tweed.create = (tweed) => {
   return db.one(
     `
-    INSERT INTO tweeds (tweed_text, tweed_time)
+    INSERT INTO tweedr (tweed)
     VALUES ($1, $2)
     RETURNING *`,
-    [tweed.tweed, tweed.time]
+    [tweedr.tweed]
   );
 };
 
