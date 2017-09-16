@@ -1,6 +1,5 @@
 const db = require('../db/config');
 const pgp = require('pg-promise')();
-const db = pgp(config)
 
 const Tweed = {};
 
