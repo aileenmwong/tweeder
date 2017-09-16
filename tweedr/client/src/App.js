@@ -12,44 +12,52 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      db: {},
+      db:[],
       inputTweedValue: '',
       };
-
+      this.handleChange = this.handleChange.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentWillMount() {
-    console.log('App will mount');
-  }
+  // componentWillMount() {
+  //   console.log('App will mount');
+  // }
 
   componentDidMount() {
     console.log('App did mount');
-    axios('localhost:3001/api/tweedr')
-    .then(res => {
-      this.setState(prevState => {
-        return {
-          db: this.data.tweed,
+    axios.get('http://localhost:3001/api/tweedr')
+    .then((res) => {
+      console.table(res.data.data);
+      this.setState({db: res.data.data});
         }
-      })
-    })
-  }
+      )
+    }
+
+
 
   handleChange(event) {
+    console.log('App handling change', event.target.value);
     this.setState({
       inputTweedValue: event.target.value
     });
   }
 
   handleSubmit(event) {
-    event.preventDefault();
-    event.target.content = '';
-    axios('localhost:3001/api/tweedr')
+    console.log('App handling submit')
+    event.preventDefault(); // avoids reload of page
+    event.target.children[0].content = '';
+    // console.log(event.target.children[0].value);
+    axios.post('http://localhost:3001/api/tweedr', {tweed:this.state.inputTweedValue})
     .then(res => {
+      console.log('data just inserted! ', res.data.data.tweed);
       this.setState(prevState => {
         return {
-          db: this.data.tweed,
+          db: prevState.db.concat(res.data.data.tweed),
         }
       })
+    })
+    .catch(err => {
+      console.log('error posting data');
     })
   }
 
@@ -67,8 +75,8 @@ class App extends Component {
         <TweedList
           tweed={this.state.db} />
       </div>
-
     );
+
   }
 }
 

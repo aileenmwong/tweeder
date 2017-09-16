@@ -30,7 +30,7 @@ app.get('/', function(req, res) {
 
 /* tweeds API route */
 const tweedRoutes = require('./routes/tweedroutes');
-app.use('/api/tweeds', tweedRoutes);
+app.use('/api/tweedr', tweedRoutes);
 
 /* handling 404 */
 app.get('*', function(req, res) {
