@@ -43,8 +43,7 @@ class App extends Component {
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
           />
-        <TweedList />
-      </div>
+        </div>
     );
   }
 }
