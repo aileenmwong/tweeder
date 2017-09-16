@@ -22,3 +22,19 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+form {
+  padding:16px;
+}
+
+input {
+  font-size: 1em;
+  padding: .5em;
+  margin-top: 3em;
+  width: 20em;
+
+}
+button {
+  margin: 2em;
+  font-size: 1em;
+}

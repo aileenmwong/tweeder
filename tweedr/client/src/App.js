@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TweedForm from './components/TweedForm';
-import TweedList from './components/TweedForm';
+import TweedList from './components/TweedList';
 import './App.css';
 
 class App extends Component {
@@ -43,7 +43,9 @@ class App extends Component {
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
           />
-        </div>
+        <TweedList/>
+      </div>
+
     );
   }
 }
