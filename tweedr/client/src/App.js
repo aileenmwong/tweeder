@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TweedForm from './components/TweedForm';
 import TweedList from './components/TweedList';
 import './App.css';
+import axios from 'axios';
 
 class App extends Component {
   constructor() {
@@ -19,6 +20,14 @@ class App extends Component {
 
   componentDidMount() {
     console.log('App did mount');
+    axios('localhost:3001/api/tweedr')
+    .then(res => {
+      this.setState(prevState => {
+        return {
+          db: this.data.tweeds,
+        }
+      })
+    })
   }
 
   handleChange(event) {
@@ -30,6 +39,14 @@ class App extends Component {
   handleSubmit(event) {
     event.preventDefault();
     event.target.content = '';
+    axios('localhost:3001/api/tweedr')
+    .then(res => {
+      this.setState(prevState => {
+        return {
+          db: this.data.tweeds,
+        }
+      })
+    })
   }
 
   render() {
