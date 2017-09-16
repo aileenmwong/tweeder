@@ -22,9 +22,9 @@ Tweed.create = (tweed) => {
   return db.one(
     `
     INSERT INTO tweedr (tweed)
-    VALUES ($1, $2)
+    VALUES ($1)
     RETURNING *`,
-    [tweedr.tweed]
+    [tweed.tweed]
   );
 };
 

@@ -5,9 +5,9 @@ const tweedsController = {};
 tweedsController.index = (req, res) => {
   Tweed.findAll()
     .then(tweeds => {
-      res.json({ 
+      res.json({
         message: 'ok',
-        data: { tweeds },
+        data:  tweeds ,
       });
     })
     .catch(err => {

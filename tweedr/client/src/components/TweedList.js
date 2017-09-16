@@ -3,38 +3,54 @@ import Tweed from './Tweed';
 
 class TweedList extends Component {
 
-  componentWillReceiveProps(nextProps) {
-    console.log('Tweed will receive props');
+  shouldComponentUpdate(nextProps, nextState) {
+
+    // will check 23 times, but NOT render 23 times
+    //  add later, to bemonstrate the lifecycle
+
+    console.log('Tweedr should update?', nextProps.tweed !== this.props.tweed);
+    return nextProps.tweed !== this.props.tweed;
   }
 
-  componentWillMount() {
-    console.log('Tweed will mount');
-    /* stop from */
-    return false;
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   console.log('Tweed will receive props');
+  // }
+
+  // componentWillMount() {
+  //   console.log('Tweed will mount');
+  //   /* stop from */
+  //   return false;
+  // }
 
   /* is triggered right after the state change */
-  componentWillUpdate() {
-    console.log('Tweed will update');
-  }
+  // componentWillUpdate() {
+  //   console.log('Tweed will update');
+  // }
   /*
   triggered right after rendering
   use case: posting to database after the form submisison
   */
-  componentDidUpdate() {
-    console.log('Tweed did update');
-  }
+  // componentDidUpdate() {
+  //   console.log('Tweed did update');
+  // }
 
   render() {
-    console.log('Tweed rendering', this.state);
+    console.log('Tweed rendering', this.props);
     return (
       <div>
-      { this.props.data.map (tweed => {
-        return <Tweed tweed={tweed} key={tweed.id} />
-      })}
+      { this.props.tweed.map ((data) => {
+         return (
+          <Tweed
+          data={data}
+          key={data.id} />
+          )
+       })}
       </div>
     )
   }
+
+
 }
+
 
 export default TweedList;
