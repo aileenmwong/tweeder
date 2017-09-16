@@ -28,7 +28,7 @@ class App extends Component {
     .then(res => {
       this.setState(prevState => {
         return {
-          db: this.data.tweeds,
+          db: this.data.tweed,
         }
       })
     })
@@ -47,7 +47,7 @@ class App extends Component {
     .then(res => {
       this.setState(prevState => {
         return {
-          db: this.data.tweeds,
+          db: this.data.tweed,
         }
       })
     })
@@ -64,7 +64,8 @@ class App extends Component {
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
           />
-        <TweedList/>
+        <TweedList
+          tweed={this.state.db} />
       </div>
 
     );

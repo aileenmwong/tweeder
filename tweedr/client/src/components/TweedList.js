@@ -29,7 +29,9 @@ class TweedList extends Component {
     console.log('Tweed rendering', this.state);
     return (
       <div>
-
+      { this.props.data.map (tweed => {
+        return <Tweed tweed={tweed} key={tweed.id} />
+      })}
       </div>
     )
   }
