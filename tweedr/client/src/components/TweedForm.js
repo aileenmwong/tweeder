@@ -16,7 +16,7 @@ class TweedForm extends Component {
       placeholder="Add A Tweed"
       onChange={this.props.handleChange}
 
-    ></input><br/>
+    ></input>
     <button id="submit">Add!</button>
 
     </form>
