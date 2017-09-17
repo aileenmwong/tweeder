@@ -65,8 +65,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h1>Tweedr</h1>
-          <h2>What ya thinking?</h2>
+          <h1>What ya thinking?</h1>
         </div>
         <TweedForm
           handleSubmit={this.handleSubmit}
