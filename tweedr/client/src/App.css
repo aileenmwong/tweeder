@@ -1,3 +1,8 @@
+body {
+  background: url("https://s3.amazonaws.com/maohungwdiproject2/pink_cloud.jpg") no-repeat top center;
+  background-size: contain;
+}
+
 .App {
   text-align: center;
 }
@@ -8,7 +13,7 @@
 }
 
 .App-header {
-  background-color: #222;
+  /*background-color: #222;*/
   height: 150px;
   padding: 20px;
   color: white;
@@ -28,13 +33,35 @@ form {
 }
 
 input {
-  font-size: 1em;
-  padding: .5em;
+  font-size: 1.2em;
+  padding: .6em;
   margin-top: 3em;
+  margin-left: 5em;
   width: 20em;
 
 }
 button {
   margin: 2em;
   font-size: 1em;
+}
+
+#root h1{
+  font-family: 'Supermercado One', cursive;
+  color: yellow;
+}
+
+#tweedrlist{
+  font-family: 'Itim', cursive;
+  font-size: 1.2em;
+  color: #551a8b;
+  margin: 4em auto;
+  border-radius: 1em;
+  width: 50%;
+
+}
+
+#tweedrlist h2 {
+  background: url("https://s3.amazonaws.com/maohungwdiproject2/crayons.png") no-repeat top center;
+  padding: 1.3em 1em;
+  margin: 0em;
 }
