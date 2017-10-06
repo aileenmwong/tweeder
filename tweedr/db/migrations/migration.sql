@@ -1,4 +1,4 @@
-\c tweedr_dev
+-- \c tweedr_dev
 DROP TABLE IF EXISTS tweedr;
 
 CREATE TABLE IF NOT EXISTS tweedr(

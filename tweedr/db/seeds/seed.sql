@@ -1,4 +1,4 @@
-\c tweedr_dev
+-- \c tweedr_dev
 
 INSERT INTO tweedr (tweed) VALUES
   ('Hello World!'),

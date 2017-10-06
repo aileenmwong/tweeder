@@ -12,8 +12,10 @@ app.listen(PORT, function() {
   console.log(`listening on port ${PORT}`);
 });
 
+app.use(express.static(path.join(__dirname, 'client/build')));
+
 /* setting static file */
-app.use('/static', express.static(path.join(__dirname, 'public')));
+// app.use('/static', express.static(path.join(__dirname, 'public')));
 /* setting up cors */
 app.use(cors());
 /* setting up logger */
@@ -24,15 +26,17 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 /* setting routes */
 /* ====================== INDEX ROUTE ========= */
-app.get('/', function(req, res) {
-  res.sendFile(__dirname + '/public/index.html');
-});
+// app.get('/', function(req, res) {
+//   res.sendFile(__dirname + '/public/index.html');
+// });
+
+app.use('/api', apiRoutes);
 
 /* tweeds API route */
 const tweedRoutes = require('./routes/tweedroutes');
 app.use('/api/tweedr', tweedRoutes);
 
 /* handling 404 */
-app.get('*', function(req, res) {
-  res.status(404).send({message: 'Oops! Not found.'});
-});
+// app.get('*', function(req, res) {
+//   res.status(404).send({message: 'Oops! Not found.'});
+// });

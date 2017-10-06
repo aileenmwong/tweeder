@@ -25,7 +25,7 @@ class App extends Component {
 
   componentDidMount() {
     console.log('App did mount');
-    axios.get('http://localhost:3001/api/tweedr')
+    axios.get('/api/tweedr')
     .then((res) => {
       console.table(res.data.data);
       this.setState({db: res.data.data});
@@ -47,7 +47,7 @@ class App extends Component {
     event.preventDefault(); // avoids reload of page
     event.target.children[0].content = '';
     // console.log(event.target.children[0].value);
-    axios.post('http://localhost:3001/api/tweedr', {tweed:this.state.inputTweedValue})
+    axios.post('/api/tweedr', {tweed:this.state.inputTweedValue})
     .then(res => {
       console.log('data just inserted! ', res.data.data.tweed);
       this.setState(prevState => {
