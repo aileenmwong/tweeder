@@ -30,7 +30,13 @@ app.use(bodyParser.urlencoded({extended: false}));
 //   res.sendFile(__dirname + '/public/index.html');
 // });
 
-// app.use('/api', apiRoutes);
+app.use(express.static(path.join(__dirname, 'client/build')));
+
+app.use('/api', apiRoutes);
+
+app.get('/*', function (req, res) {
+   res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+ });
 
 /* tweeds API route */
 const tweedRoutes = require('./routes/tweedroutes');
