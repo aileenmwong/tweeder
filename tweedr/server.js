@@ -30,8 +30,6 @@ app.use(bodyParser.urlencoded({extended: false}));
 //   res.sendFile(__dirname + '/public/index.html');
 // });
 
-app.use(express.static(path.join(__dirname, 'client/build')));
-
 app.use('/api', apiRoutes);
 
 app.get('/*', function (req, res) {
